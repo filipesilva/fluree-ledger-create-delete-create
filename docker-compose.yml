@@ -1,0 +1,11 @@
+version: "3"
+services:
+  fluree:
+    # Under default settings maximum recommended event size is 2mb.
+    # Can be increased via fdb-memory-reindex-max to up to 10mb.
+    image: fluree/ledger:latest
+    restart: always
+    ports:
+      - 8090:8090
+    volumes:
+      - ./docker-data/fluree:/var/lib/fluree
